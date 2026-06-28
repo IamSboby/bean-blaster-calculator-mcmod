@@ -1,0 +1,64 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version '1.14.10'
+}
+
+group = project.maven_group
+version = project.mod_version
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    maven { url = 'https://maven.fabricmc.net/' }
+    mavenCentral()
+}
+
+loom {
+    mods {
+        beanblaster {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+}
+
+processResources {
+    inputs.property 'version', project.version
+    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
+
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(org.gradle.api.tasks.AbstractCopyTask).configureEach {
+    duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
+    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
+}
+
+tasks.withType(org.gradle.api.tasks.bundling.AbstractArchiveTask).configureEach {
+    duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
+    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+remapJar {
+    archiveFileName = "${project.archives_base_name}-${project.mod_version}.jar"
+}

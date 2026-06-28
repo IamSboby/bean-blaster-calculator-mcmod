@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "beanblaster",
+  "version": "${version}",
+  "name": "Bean Blaster Calculator",
+  "description": "Calculates how many Wind Charges must be placed in each Bean Blaster dispenser to reach selected X and Z coordinates.",
+  "authors": [
+    "§dwavedtime",
+    {
+      "name": "§aSboby_",
+      "contact": {
+        "homepage": "https://modrinth.com/user/Sboby_"
+      }
+    },
+    {
+      "name": "§6Albuz999",
+      "contact": {
+        "homepage": "https://modrinth.com/user/Albuz999"
+      }
+    }
+  ],
+  "contributors": [
+    "Original Pearl Launcher concept: @IddieBean"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/bean-blaster-calc",
+    "sources": "https://github.com/IamSboby/custom-icon-mcmod",
+    "issues": "https://github.com/IamSboby/custom-icon-mcmod/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/beanblaster/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.beanblaster.BeanBlasterClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "=1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.modrinth": "https://modrinth.com/mod/bean-blaster-calc"
+      }
+    }
+  }
+}
