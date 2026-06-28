@@ -52,3 +52,6 @@ Build with:
 ```powershell
 .\gradlew.bat remapJar
 ```
+
+MIT License
+(c) IAmSboby
