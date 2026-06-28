@@ -216,11 +216,44 @@ public final class BlasterCommand {
             FabricClientCommandSource source,
             BeanBlasterCalculator.Load load
     ) {
+        int windCharges = load.windCharges();
+
         source.sendFeedback(Text.literal("Dispenser " + load.dispenser() + ": ")
                 .formatted(Formatting.GRAY)
-                .append(Text.literal(Integer.toString(load.windCharges()))
+                .append(Text.literal(Integer.toString(windCharges))
                         .formatted(Formatting.YELLOW, Formatting.BOLD))
+                .append(Text.literal(" (" + formatMinecraftAmount(windCharges) + ")")
+                        .formatted(Formatting.AQUA))
                 .append(Text.literal(" Wind Charges").formatted(Formatting.GREEN)));
+    }
+
+    private static String formatMinecraftAmount(int amount) {
+        int remaining = Math.max(0, amount);
+        int shulkerBoxes = remaining / 1728;
+        remaining %= 1728;
+        int stacks = remaining / 64;
+        int items = remaining % 64;
+
+        StringBuilder builder = new StringBuilder();
+
+        if (shulkerBoxes > 0) {
+            appendAmountPart(builder, shulkerBoxes + " SB");
+        }
+        if (stacks > 0) {
+            appendAmountPart(builder, stacks + (stacks == 1 ? " Stack" : " Stacks"));
+        }
+        if (items > 0 || builder.isEmpty()) {
+            appendAmountPart(builder, items + (items == 1 ? " Item" : " Items"));
+        }
+
+        return builder.toString();
+    }
+
+    private static void appendAmountPart(StringBuilder builder, String part) {
+        if (!builder.isEmpty()) {
+            builder.append(" + ");
+        }
+        builder.append(part);
     }
 
     private static boolean isInWorld(MinecraftClient client) {
