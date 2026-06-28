@@ -24,8 +24,8 @@
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/bean-blaster-calc",
-    "sources": "https://github.com/IamSboby/custom-icon-mcmod",
-    "issues": "https://github.com/IamSboby/custom-icon-mcmod/issues"
+    "sources": "https://github.com/IamSboby/bean-blaster-calculator-mcmod",
+    "issues": "https://github.com/IamSboby/bean-blaster-calculator-mcmod/issues"
   },
   "license": "MIT",
   "icon": "assets/beanblaster/icon.png",
