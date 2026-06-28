@@ -38,7 +38,7 @@ set "WRAPPER_TMP=%TEMP%\beanblaster-gradle-wrapper.jar"
 copy /Y "%WRAPPER_JAR%" "%WRAPPER_TMP%" >nul
 if errorlevel 1 goto copy_failed
 
-"%JAVA_EXE%" -Xmx256m -Xms64m -jar "%WRAPPER_TMP%" %*
+"%JAVA_EXE%" --add-modules=jdk.zipfs -Xmx256m -Xms64m -jar "%WRAPPER_TMP%" %*
 exit /b %ERRORLEVEL%
 
 :missing_wrapper

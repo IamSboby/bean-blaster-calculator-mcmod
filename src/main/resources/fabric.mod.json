@@ -20,7 +20,7 @@
     }
   ],
   "contributors": [
-    "Original Pearl Launcher concept: @IddieBean"
+    "Pearl launcher (Bean Blaster) and original python code by §c@IddieBean §4on YT"
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/bean-blaster-calc",
@@ -47,7 +47,8 @@
   "custom": {
     "modmenu": {
       "links": {
-        "modmenu.modrinth": "https://modrinth.com/mod/bean-blaster-calc"
+        "modmenu.modrinth": "https://modrinth.com/mod/bean-blaster-calc",
+        "modmenu.discord": "https://discord.gg/jxQtq3XBKv"
       }
     }
   }
