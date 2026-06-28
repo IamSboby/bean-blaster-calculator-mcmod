@@ -1,6 +1,9 @@
 # Bean Blaster Calculator 1.0.11
-
-Client-side Fabric mod for Minecraft 1.21.11.
+[![GitHub release](https://img.shields.io/github/v/release/IamSboby/bean-blaster-calculator-mcmod?style=flat&color=181717)](https://github.com/IamSboby/bean-blaster-calculator-mcmod/releases)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.21.1-62B47A?style=flat&logo=minecraft&logoColor=white)](https://minecraft.net)
+[![Fabric](https://img.shields.io/badge/Fabric_Loader-0.16.9+-DBB589?style=flat)](https://fabricmc.net)
+[![License](https://img.shields.io/github/license/IamSboby/bean-blaster-calculator-mcmod?style=flat&label=License)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-Reversal_-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/jxQtq3XBKv)
 
 ## Build
 
